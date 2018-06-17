@@ -36,7 +36,7 @@ for i, result in enumerate(results):
 
         with urllib.request.urlopen(url) as f:
             dom = lxml.html.fromstring(f.read())            
-        source = dom.xpath('//pre[@id="submission-code"]/text()')[0]
+        source = dom.xpath('id("submission-code")/text()')[0]
 
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, 'w') as f:
